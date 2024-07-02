@@ -57,7 +57,7 @@ export const Inicio = () => {
                     <div class="contenido-navegacion contenedor">
                         <div class="logo">
                             <h2>
-                                Ristorante <span class="verde">Tu</span><span>ri</span><span
+                                Ristorante s <span class="verde">Tu</span><span>ri</span><span
                                     class="rojo">lli</span>
                             </h2>
                         </div>
