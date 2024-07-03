@@ -1,0 +1,23 @@
+.tp-container{
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-producto{
+    width: 20%;
+    height: 20%;
+    object-fit: contain;
+}
+
+.nombre-producto{
+    font-size: 150%;
+    font-weight: bold;
+    margin-top: -0.2%;
+    text-align: center;
+}
+
+.ingredientes-producto{
+    margin-top: -1%;
+    text-align: center;
+}
