@@ -3,6 +3,7 @@ import '../Inicio/Inicio.css'
 import { Navigate } from '../Componentes/Navigate';
 import { ProductsTitleTable } from '../Componentes/ProductsTitleTable';
 import { DrinksTitleTable } from '../Componentes/DrinksTitleTable';
+import axios from '../../axios';
 
 export const Menu = () => {
 
@@ -33,6 +34,39 @@ export const Menu = () => {
         },
     ]
 
+    const [ entradas, setEntradas ] = useState()
+    if(!entradas){
+        axios.get('get/entradas').then((res)=>{
+            if(res&&res.data){
+                setEntradas(res.data)
+            }
+        })
+    }
+    const [ platosFuertes, setPlatosFuertes ] = useState()
+    if(!platosFuertes){
+        axios.get('get/platos_fuertes').then((res)=>{
+            if(res&&res.data){
+                setPlatosFuertes(res.data)
+            }
+        })
+    }
+    const [ bebidas, setBebidas ] = useState()
+    if(!bebidas){
+        axios.get('get/bebidas').then((res)=>{
+            if(res&&res.data){
+                setBebidas(res.data)
+            }
+        })
+    }  
+    const [ cocteles, setCocteles ] = useState()
+    if(!cocteles){
+        axios.get('get/cocteles').then((res)=>{
+            if(res&&res.data){
+                setCocteles(res.data)
+            }
+        })
+    }
+
     return (
         <div>
             <header class="encabezado">
@@ -51,22 +85,21 @@ export const Menu = () => {
             <div>
                 <ProductsTitleTable
                     titulo='Entradas'
-                    arrayProductos={arrayProductos}
-                >
-                </ProductsTitleTable>
+                    arrayProductos={entradas}
+                />
                 <ProductsTitleTable
                     titulo='Platos Fuertes'
-                    arrayProductos={arrayProductos}
+                    arrayProductos={platosFuertes}
                 >
                 </ProductsTitleTable>
                 <DrinksTitleTable
                     titulo='Bebidas'
-                    arrayProductos={arrayProductos}
+                    arrayProductos={bebidas}
                 >
                 </DrinksTitleTable>
                 <ProductsTitleTable
                     titulo='Cocteles'
-                    arrayProductos={arrayProductos}
+                    arrayProductos={cocteles}
                 >
                 </ProductsTitleTable>
             </div>
